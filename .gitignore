@@ -1,0 +1,35 @@
+# Compiled binaries
+*.o
+*.so
+*.a
+kemtls_client_enhanced
+kemtls_broker_enhanced
+bench_*
+test_*
+
+# Generated files
+*.csv
+*.log
+*.pcap
+*.pcapng
+broker_cert.*
+
+# Build artifacts
+build/
+*.dSYM/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System
+.DS_Store
+Thumbs.db
+
+# Results (keep structure, not data)
+results/*.csv
+results/*.json
+!results/README.md

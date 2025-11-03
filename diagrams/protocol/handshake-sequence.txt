@@ -1,0 +1,38 @@
+KEMTLS Handshake Protocol
+=========================
+
+Client                                    Broker
+  │                                          │
+  │         ClientHello                      │
+  │  ─────────────────────────────────────►  │
+  │                                          │
+  │         ServerHello                      │
+  │  ◄─────────────────────────────────────  │
+  │                                          │
+  │      EncryptedExtensions                 │
+  │  ◄─────────────────────────────────────  │
+  │                                          │
+  │         Certificate                      │
+  │  ◄─────────────────────────────────────  │
+  │  (Broker's ML-KEM-512 PK)                │
+  │                                          │
+  │     KEM Encapsulation                    │
+  │  ─────────────────────────────────────►  │
+  │  (CT to broker's PK)                     │
+  │                                          │
+  │     Server KEM CTS                       │
+  │  ◄─────────────────────────────────────  │
+  │  (CT to client's PK)                     │
+  │                                          │
+  │      Client Finished                     │
+  │  ─────────────────────────────────────►  │
+  │                                          │
+  │      Server Finished                     │
+  │  ◄─────────────────────────────────────  │
+  │                                          │
+  │    Application Data (MQTT)               │
+  │  ◄═════════════════════════════════════► │
+  │  (Encrypted with AES-256-GCM)            │
+  │                                          │
+
+Handshake Complete - Secure Channel Established
