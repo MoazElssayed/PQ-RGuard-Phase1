@@ -21,7 +21,7 @@ A lightweight, quantum-resistant communication protocol for Internet of Medical 
 | **Handshake** | 9 ms | 32% faster than regular PQCTLS |
 | **Pure Crypto** | 1.2 ms | Competitive with embedded systems |
 | **Memory** | 22 KB | Suitable for constrained devices |
-| **Energy** | 0.36 mJ | Ultra-low power |
+| **Energy** | 0.36 mJ | low power |
 
 ---
 
