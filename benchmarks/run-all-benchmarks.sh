@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║           PQ-RGuard+ Performance Benchmarks                  ║"
-echo "╚══════════════════════════════════════════════════════════════╝"
+
+echo           " PQ-RGuard+ Performance Benchmarks"
 echo ""
 
 RESULTS_DIR="../results"
