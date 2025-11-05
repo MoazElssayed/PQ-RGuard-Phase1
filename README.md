@@ -110,7 +110,7 @@ PQ-RGuard-Phase1/
 ## **Team Members:**
 - Moaz Elsayed
 - Rashid Almarri
-- -Mohammed Almarri
+- Mohammed Almarri
 ---
 
 ##  **License**
