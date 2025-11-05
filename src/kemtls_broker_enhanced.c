@@ -1,5 +1,5 @@
 /*
- * kemtls_broker_enhanced.c - Enhanced KEMTLS Broker with Real MQTT Forwarding
+ * kemtls_broker_enhanced.c - Enhanced KEMTLS Broker with MQTT Forwarding
  * 
  * Compile:
  *   gcc -o kemtls_broker_enhanced kemtls_broker_enhanced.c kemtls.c \
