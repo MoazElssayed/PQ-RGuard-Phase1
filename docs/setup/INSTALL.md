@@ -2,7 +2,7 @@
 
 ## Quick Install
 ```bash
-git clone https://github.com/YOUR_USERNAME/PQ-RGuard-Phase1.git
+git clone https://github.com/MoazElssayed/PQ-RGuard-Phase1.git
 cd PQ-RGuard-Phase1
 ./scripts/install/setup-all.sh
 ```
