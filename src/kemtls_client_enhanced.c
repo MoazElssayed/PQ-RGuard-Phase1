@@ -298,10 +298,8 @@ int main(int argc, char *argv[]) {
     kemtls_ctx_t *ctx = NULL;
     int ret = 1;
     
-    printf("╔══════════════════════════════════════════════════════════════╗\n");
-    printf("║   KEMTLS Enhanced Client - Raspberry Pi 5                   ║\n");
-    printf("║   With Performance Metrics & Real MQTT                      ║\n");
-    printf("╚══════════════════════════════════════════════════════════════╝\n\n");
+    printf("   KEMTLS Enhanced Client - Raspberry Pi 5                   \n");
+    printf("   With Performance Metrics & Real MQTT                      \n");
     
     if (argc < 2) {
         fprintf(stderr, "Usage: %s <broker_ip>\n", argv[0]);
