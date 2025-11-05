@@ -11,9 +11,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-// ============================================================================
 // MQTT Control Packet Types
-// ============================================================================
 
 #define MQTT_CONNECT        0x10
 #define MQTT_CONNACK        0x20
@@ -35,9 +33,7 @@
 #define MQTT_QOS_1          0x01  // At least once
 #define MQTT_QOS_2          0x02  // Exactly once
 
-// ============================================================================
 // MQTT Packet Structures
-// ============================================================================
 
 typedef struct {
     const char *client_id;
@@ -67,9 +63,7 @@ typedef struct {
     uint16_t packet_id;  // Only for QoS 1 and 2
 } mqtt_publish_t;
 
-// ============================================================================
 // API Functions
-// ============================================================================
 
 // Build CONNECT packet
 int mqtt_build_connect(const mqtt_connect_t *connect,
