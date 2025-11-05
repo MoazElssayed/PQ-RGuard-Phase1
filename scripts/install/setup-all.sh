@@ -2,9 +2,7 @@
 
 set -e
 
-echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║          PQ-RGuard+ Phase 1 - Complete Setup                ║"
-echo "╚══════════════════════════════════════════════════════════════╝"
+echo "          PQ-RGuard+ Phase 1 - Complete Setup                "
 echo ""
 
 # Check if running on Raspberry Pi
@@ -69,10 +67,7 @@ echo "🦟 Configuring Mosquitto..."
 sudo systemctl enable mosquitto
 sudo systemctl start mosquitto
 
-echo ""
-echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║                   ✅ Setup Complete!                         ║"
-echo "╚══════════════════════════════════════════════════════════════╝"
+echo "                   ✅ Setup Complete!                         "
 echo ""
 echo "Next steps:"
 echo "  1. Run broker:  ./scripts/test/run-broker.sh"
