@@ -9,17 +9,13 @@
 #include <sys/resource.h>
 #include <unistd.h>
 
-// ============================================================================
 // Initialization
-// ============================================================================
 
 void kemtls_metrics_init(kemtls_metrics_t *metrics) {
     memset(metrics, 0, sizeof(kemtls_metrics_t));
 }
 
-// ============================================================================
 // Memory Profiling
-// ============================================================================
 
 size_t kemtls_metrics_get_current_memory(void) {
     struct rusage usage;
@@ -45,15 +41,11 @@ size_t kemtls_metrics_get_peak_memory(void) {
     return peak_kb * 1024; // Convert to bytes
 }
 
-// ============================================================================
 // Reporting
-// ============================================================================
 
 void kemtls_metrics_print(const kemtls_metrics_t *metrics, const char *label) {
     printf("\n");
-    printf("╔══════════════════════════════════════════════════════════════╗\n");
-    printf("║  KEMTLS Performance Metrics: %-30s ║\n", label);
-    printf("╚══════════════════════════════════════════════════════════════╝\n");
+    printf("  KEMTLS Performance Metrics: %-30s \n", label);
     
     // Memory
     printf("\n📊 Memory Footprint:\n");
@@ -112,9 +104,7 @@ void kemtls_metrics_print(const kemtls_metrics_t *metrics, const char *label) {
     printf("\n");
 }
 
-// ============================================================================
 // CSV Export
-// ============================================================================
 
 void kemtls_metrics_to_csv(const kemtls_metrics_t *metrics, const char *filename) {
     FILE *fp = fopen(filename, "a");
@@ -157,17 +147,13 @@ void kemtls_metrics_to_csv(const kemtls_metrics_t *metrics, const char *filename
     printf("✓ Metrics exported to %s\n", filename);
 }
 
-// ============================================================================
 // Comparison
-// ============================================================================
 
 void kemtls_metrics_compare(const kemtls_metrics_t *baseline,
                            const kemtls_metrics_t *pqc,
                            const char *scenario_name) {
     printf("\n");
-    printf("╔══════════════════════════════════════════════════════════════╗\n");
-    printf("║  Performance Comparison: %-34s ║\n", scenario_name);
-    printf("╚══════════════════════════════════════════════════════════════╝\n");
+    printf("  Performance Comparison: %-34s \n", scenario_name);
     
     printf("\n%-25s %15s %15s %10s\n", "Metric", "Baseline", "PQC", "Overhead");
     printf("─────────────────────────────────────────────────────────────────\n");
