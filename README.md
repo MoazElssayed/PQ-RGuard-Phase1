@@ -77,9 +77,6 @@ chmod +x scripts/install/*.sh
 ## 📚 **Documentation**
 
 - 📖 [Installation Guide](docs/setup/INSTALL.md)
-- 🏗️ [Architecture Overview](docs/architecture/ARCHITECTURE.md)
-- 🔐 [Protocol Specification](docs/architecture/PROTOCOL.md)
-- 📊 [Performance Analysis](docs/PERFORMANCE.md)
 
 ---
 
