@@ -1,8 +1,5 @@
 /*
  * kemtls.c - KEMTLS Protocol Implementation
- * 
- * Implementation of "Post-Quantum TLS Without Handshake Signatures"
- * Following the ACM CCS 2020 paper specification
  */
 
 #include "kemtls.h"
@@ -22,9 +19,7 @@
 // Global KEM context
 static OQS_KEM *g_kem = NULL;
 
-// ============================================================================
 // Library Initialization
-// ============================================================================
 
 int kemtls_init(void) {
     if (g_kem != NULL) return KEMTLS_OK;
@@ -46,9 +41,7 @@ void kemtls_cleanup(void) {
     }
 }
 
-// ============================================================================
 // Utility Functions
-// ============================================================================
 
 uint64_t kemtls_time_ms(void) {
     struct timespec ts;
@@ -92,9 +85,7 @@ const char* kemtls_strerror(int err) {
     }
 }
 
-// ============================================================================
 // Context Management
-// ============================================================================
 
 kemtls_ctx_t* kemtls_ctx_new(bool is_client) {
     kemtls_ctx_t *ctx = calloc(1, sizeof(kemtls_ctx_t));
@@ -129,9 +120,7 @@ void kemtls_ctx_free(kemtls_ctx_t *ctx) {
     }
 }
 
-// ============================================================================
 // HKDF-Extract and HKDF-Expand (TLS 1.3 Key Schedule)
-// ============================================================================
 
 static int hkdf_extract(const uint8_t *salt, size_t salt_len,
                         const uint8_t *ikm, size_t ikm_len,
@@ -176,9 +165,7 @@ cleanup:
     return ret;
 }
 
-// ============================================================================
 // TLS 1.3 Key Schedule for KEMTLS
-// ============================================================================
 
 int kemtls_derive_handshake_secrets(kemtls_ctx_t *ctx) {
     // Handshake Secret = HKDF-Extract(0, ss_c)
@@ -264,9 +251,7 @@ int kemtls_derive_master_secrets(kemtls_ctx_t *ctx) {
     return KEMTLS_OK;
 }
 
-// ============================================================================
 // AEAD Encryption/Decryption
-// ============================================================================
 
 static int aead_encrypt(const uint8_t *key, const uint8_t *iv, uint64_t seq,
                         const uint8_t *plaintext, size_t plaintext_len,
@@ -345,9 +330,7 @@ cleanup:
     return ret;
 }
 
-// ============================================================================
 // Client Handshake Functions
-// ============================================================================
 
 int kemtls_client_hello(kemtls_ctx_t *ctx, uint8_t *out_buf, size_t out_len) {
     if (!ctx->is_client || ctx->state != STATE_START) {
@@ -455,9 +438,7 @@ int kemtls_process_server_kem_cts(kemtls_ctx_t *ctx, const uint8_t *msg, size_t 
     return KEMTLS_OK;
 }
 
-// ============================================================================
 // Application Data
-// ============================================================================
 
 int kemtls_encrypt_data(kemtls_ctx_t *ctx,
                         const uint8_t *plaintext, size_t plaintext_len,
@@ -503,9 +484,7 @@ int kemtls_decrypt_data(kemtls_ctx_t *ctx,
     return ret == KEMTLS_OK ? plaintext_len : ret;
 }
 
-// ============================================================================
 // Server Handshake Functions (Implementations)
-// ============================================================================
 
 int kemtls_process_client_hello(kemtls_ctx_t *ctx, const uint8_t *msg, size_t len) {
     const kemtls_client_hello_t *hello = (kemtls_client_hello_t *)msg;
@@ -625,9 +604,7 @@ int kemtls_process_server_finished(kemtls_ctx_t *ctx, const uint8_t *msg, size_t
     return KEMTLS_OK;
 }
 
-// ============================================================================
 // Certificate Management
-// ============================================================================
 
 int kemtls_load_certificate(kemtls_certificate_t *cert,
                             const char *subject,
@@ -643,9 +620,7 @@ int kemtls_verify_certificate(const kemtls_certificate_t *cert) {
     return KEMTLS_OK;
 }
 
-// ============================================================================
 // Statistics
-// ============================================================================
 
 uint64_t kemtls_get_handshake_time(const kemtls_ctx_t *ctx) {
     if (ctx->state != STATE_CONNECTED) return 0;
