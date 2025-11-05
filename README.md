@@ -16,12 +16,12 @@ A lightweight, quantum-resistant communication protocol for Internet of Medical 
 
 ## 📊 **Performance Highlights**
 
-| Metric | Value | Comparison |
-|--------|-------|------------|
-| **Handshake** | 9 ms | 32% faster than regular PQCTLS |
-| **Pure Crypto** | 1.2 ms | Competitive with embedded systems |
-| **Memory** | 22 KB | Suitable for constrained devices |
-| **Energy** | 0.36 mJ | low power |
+| Metric | Value |
+|--------|-------|
+| **Handshake** | 9 ms |
+| **Pure Crypto** | 1.2 ms |
+| **Memory** | 22 KB |
+| **Energy** | 0.36 mJ |
 
 ---
 
