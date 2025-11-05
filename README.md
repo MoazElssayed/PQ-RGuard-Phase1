@@ -107,6 +107,11 @@ PQ-RGuard-Phase1/
 - **Platform:** ARM64 Raspberry Pi OS
 
 ---
+## **Team Members:**
+- Moaz Elsayed
+- Rashid Almarri
+- -Mohammed Almarri
+---
 
 ##  **License**
 
