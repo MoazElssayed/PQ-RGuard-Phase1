@@ -11,9 +11,7 @@
 #include <stddef.h>
 #include <time.h>
 
-// ============================================================================
 // Performance Metrics Structure
-// ============================================================================
 
 typedef struct {
     // Memory footprint
@@ -60,9 +58,7 @@ typedef struct {
     
 } kemtls_metrics_t;
 
-// ============================================================================
 // Timing Utilities
-// ============================================================================
 
 // High-resolution timer (nanosecond precision)
 static inline uint64_t metrics_time_ns(void) {
@@ -97,9 +93,7 @@ static inline uint64_t metrics_rdtsc(void) {
 }
 #endif
 
-// ============================================================================
 // API Functions
-// ============================================================================
 
 // Initialize metrics structure
 void kemtls_metrics_init(kemtls_metrics_t *metrics);
@@ -119,9 +113,7 @@ void kemtls_metrics_compare(const kemtls_metrics_t *baseline,
 size_t kemtls_metrics_get_current_memory(void);
 size_t kemtls_metrics_get_peak_memory(void);
 
-// ============================================================================
 // Timing Macros
-// ============================================================================
 
 #define METRICS_START_TIMER(var) \
     uint64_t var##_start = metrics_time_us()
