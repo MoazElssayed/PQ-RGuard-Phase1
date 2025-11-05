@@ -7,7 +7,7 @@ echo ""
 
 # Check if running on Raspberry Pi
 if ! grep -q "Raspberry Pi" /proc/cpuinfo 2>/dev/null; then
-    echo "⚠️  Warning: Not running on Raspberry Pi"
+    echo "  Warning: Not running on Raspberry Pi"
     read -p "Continue anyway? (y/n) " -n 1 -r
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -16,12 +16,12 @@ if ! grep -q "Raspberry Pi" /proc/cpuinfo 2>/dev/null; then
 fi
 
 # Update system
-echo "📦 Updating system packages..."
+echo " Updating system packages..."
 sudo apt update
 sudo apt upgrade -y
 
 # Install dependencies
-echo "📦 Installing dependencies..."
+echo " Installing dependencies..."
 sudo apt install -y \
     build-essential cmake git \
     libssl-dev pkg-config ninja-build \
@@ -32,7 +32,7 @@ sudo apt install -y \
 echo "✓ Dependencies installed"
 
 # Install liboqs with optimizations
-echo "🔐 Building optimized liboqs..."
+echo " Building optimized liboqs..."
 cd /tmp
 rm -rf liboqs
 git clone https://github.com/open-quantum-safe/liboqs.git
@@ -51,11 +51,11 @@ sudo ldconfig
 echo "✓ liboqs installed"
 
 # Verify liboqs
-echo "🔍 Verifying liboqs installation..."
+echo " Verifying liboqs installation..."
 pkg-config --modversion liboqs
 
 # Build PQ-RGuard+
-echo "🔨 Building PQ-RGuard+..."
+echo " Building PQ-RGuard+..."
 cd "$(dirname "$0")/../.."
 cd src
 make clean && make all
@@ -63,11 +63,11 @@ make clean && make all
 echo "✓ Build complete"
 
 # Start Mosquitto
-echo "🦟 Configuring Mosquitto..."
+echo " Configuring Mosquitto..."
 sudo systemctl enable mosquitto
 sudo systemctl start mosquitto
 
-echo "                   ✅ Setup Complete!                         "
+echo "                    Setup Complete!                         "
 echo ""
 echo "Next steps:"
 echo "  1. Run broker:  ./scripts/test/run-broker.sh"
