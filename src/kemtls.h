@@ -2,7 +2,7 @@
  * kemtls.h - KEMTLS Protocol Implementation
  * 
  * Based on: "Post-Quantum TLS Without Handshake Signatures"
- * by Schwabe, Stebila, and Wiggers (ACM CCS 2020)
+ * 
  */
 
 #ifndef KEMTLS_H
@@ -13,9 +13,7 @@
 #include <stddef.h>
 #include <time.h>
 
-// ============================================================================
 // Protocol Constants
-// ============================================================================
 
 #define KEMTLS_VERSION 0x0304  // TLS 1.3 = 0x0304
 
@@ -49,9 +47,7 @@
 // Cipher suites
 #define TLS_KEMTLS_WITH_KYBER512_AES256GCM_SHA256  0x1301
 
-// ============================================================================
 // KEMTLS State Machine
-// ============================================================================
 
 typedef enum {
     STATE_START = 0,
@@ -64,9 +60,8 @@ typedef enum {
     STATE_ERROR
 } kemtls_state_t;
 
-// ============================================================================
 // Certificate Structure
-// ============================================================================
+
 
 typedef struct {
     uint8_t subject[256];
@@ -75,9 +70,7 @@ typedef struct {
     uint8_t cert_data[MAX_CERT_LEN];
 } kemtls_certificate_t;
 
-// ============================================================================
 // KEMTLS Connection Context
-// ============================================================================
 
 typedef struct {
     bool is_client;
@@ -122,9 +115,7 @@ typedef struct {
     
 } kemtls_ctx_t;
 
-// ============================================================================
 // Handshake Message Structures
-// ============================================================================
 
 typedef struct {
     uint16_t version;
@@ -155,9 +146,7 @@ typedef struct {
     uint8_t verify_data[32];
 } kemtls_finished_t;
 
-// ============================================================================
 // Core API Functions
-// ============================================================================
 
 int kemtls_init(void);
 void kemtls_cleanup(void);
