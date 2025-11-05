@@ -2,10 +2,7 @@
 
 cd "$(dirname "$0")/../../src"
 
-echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║              Starting KEMTLS Broker                          ║"
-echo "╚══════════════════════════════════════════════════════════════╝"
-echo ""
+echo "              Starting KEMTLS Broker                          "
 
 if [ ! -f "kemtls_broker_enhanced" ]; then
     echo "❌ Broker not found. Run: make all"
