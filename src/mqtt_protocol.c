@@ -6,9 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// ============================================================================
 // Utility Functions
-// ============================================================================
 
 static int write_string(uint8_t **buf, const char *str) {
     if (!str) return 0;
@@ -61,9 +59,8 @@ int mqtt_decode_remaining_length(const uint8_t *buffer, size_t len,
     return MQTT_OK;
 }
 
-// ============================================================================
 // CONNECT Packet
-// ============================================================================
+
 
 int mqtt_build_connect(const mqtt_connect_t *connect,
                       uint8_t *buffer, size_t buffer_size,
@@ -73,7 +70,7 @@ int mqtt_build_connect(const mqtt_connect_t *connect,
     
     // Fixed header
     *ptr++ = MQTT_CONNECT;
-    remaining_len_ptr = ptr;  // We'll fill this in later
+    remaining_len_ptr = ptr;  // I'll fill this in later
     ptr += 4;  // Reserve max space for remaining length
     
     // Variable header
@@ -144,9 +141,7 @@ int mqtt_build_connect(const mqtt_connect_t *connect,
     return (*packet_len <= buffer_size) ? MQTT_OK : MQTT_ERR_BUFFER_FULL;
 }
 
-// ============================================================================
 // CONNACK Packet
-// ============================================================================
 
 int mqtt_parse_connack(const uint8_t *buffer, size_t len,
                       mqtt_connack_t *connack) {
@@ -160,9 +155,7 @@ int mqtt_parse_connack(const uint8_t *buffer, size_t len,
     return MQTT_OK;
 }
 
-// ============================================================================
 // PUBLISH Packet
-// ============================================================================
 
 int mqtt_build_publish(const mqtt_publish_t *publish,
                       uint8_t *buffer, size_t buffer_size,
@@ -211,9 +204,7 @@ int mqtt_build_publish(const mqtt_publish_t *publish,
     return (*packet_len <= buffer_size) ? MQTT_OK : MQTT_ERR_BUFFER_FULL;
 }
 
-// ============================================================================
 // PUBLISH Parse
-// ============================================================================
 
 int mqtt_parse_publish(const uint8_t *buffer, size_t len,
                       mqtt_publish_t *publish) {
@@ -259,9 +250,7 @@ int mqtt_parse_publish(const uint8_t *buffer, size_t len,
     return MQTT_OK;
 }
 
-// ============================================================================
 // DISCONNECT Packet
-// ============================================================================
 
 int mqtt_build_disconnect(uint8_t *buffer, size_t buffer_size,
                          size_t *packet_len) {
@@ -274,9 +263,7 @@ int mqtt_build_disconnect(uint8_t *buffer, size_t buffer_size,
     return MQTT_OK;
 }
 
-// ============================================================================
 // PINGREQ Packet
-// ============================================================================
 
 int mqtt_build_pingreq(uint8_t *buffer, size_t buffer_size,
                       size_t *packet_len) {
@@ -289,9 +276,7 @@ int mqtt_build_pingreq(uint8_t *buffer, size_t buffer_size,
     return MQTT_OK;
 }
 
-// ============================================================================
 // Error Handling
-// ============================================================================
 
 const char* mqtt_strerror(int err) {
     switch (err) {
