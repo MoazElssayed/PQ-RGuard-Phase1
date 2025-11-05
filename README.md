@@ -7,14 +7,14 @@
 > **Phase 1:** Post-Quantum KEMTLS with MQTT for Resource-Constrained IoMT Devices
 
 A lightweight, quantum-resistant communication protocol for Internet of Medical Things (IoMT) combining:
-- 🔐 **ML-KEM-512** (NIST-standardized post-quantum cryptography)
-- ⚡ **KEMTLS-PDK** (signature-free authentication)
-- 📡 **MQTT-over-TLS** (IoT messaging protocol)
-- 🏥 **IoMT-optimized** (low latency, energy-efficient)
+-  **ML-KEM-512** (NIST-standardized post-quantum cryptography)
+-  **KEMTLS-PDK** (signature-free authentication)
+-  **MQTT-over-TLS** (IoT messaging protocol)
+-  **IoMT-optimized** (low latency, energy-efficient)
 
 ---
 
-## 📊 **Performance Highlights**
+##  **Performance Highlights**
 
 | Metric | Value |
 |--------|-------|
@@ -25,7 +25,7 @@ A lightweight, quantum-resistant communication protocol for Internet of Medical 
 
 ---
 
-## 🏗️ **System Topology**
+##  **System Topology**
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                      IoMT Network                           │
@@ -48,7 +48,7 @@ A lightweight, quantum-resistant communication protocol for Internet of Medical 
 
 ---
 
-## 🚀 **Quick Start**
+##  **Quick Start**
 
 ### **Prerequisites**
 - Raspberry Pi 5 (or Pi 4)
@@ -74,13 +74,13 @@ chmod +x scripts/install/*.sh
 
 ---
 
-## 📚 **Documentation**
+##  **Documentation**
 
-- 📖 [Installation Guide](docs/setup/INSTALL.md)
+-  [Installation Guide](docs/setup/INSTALL.md)
 
 ---
 
-## 📁 **Repository Structure**
+##  **Repository Structure**
 ```
 PQ-RGuard-Phase1/
 ├── src/                      # Source code
@@ -98,7 +98,7 @@ PQ-RGuard-Phase1/
 
 ---
 
-## 🛠️ **Technology Stack**
+##  **Technology Stack**
 
 - **PQC:** liboqs 0.15.0-rc1 (NEON optimized)
 - **TLS:** OpenSSL 3.5.1
@@ -108,7 +108,7 @@ PQ-RGuard-Phase1/
 
 ---
 
-## 📄 **License**
+##  **License**
 
 MIT License - See [LICENSE](LICENSE)
 
