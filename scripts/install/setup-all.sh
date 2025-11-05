@@ -3,7 +3,6 @@
 set -e
 
 echo "          PQ-RGuard+ Phase 1 - Complete Setup                "
-echo ""
 
 # Check if running on Raspberry Pi
 if ! grep -q "Raspberry Pi" /proc/cpuinfo 2>/dev/null; then
