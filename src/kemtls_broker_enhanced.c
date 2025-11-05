@@ -373,10 +373,8 @@ int main(void) {
     int server_fd = -1;
     int ret = 1;
     
-    printf("╔══════════════════════════════════════════════════════════════╗\n");
-    printf("║   KEMTLS Enhanced Broker - Raspberry Pi 5                   ║\n");
-    printf("║   With Real MQTT Forwarding & Metrics                       ║\n");
-    printf("╚══════════════════════════════════════════════════════════════╝\n\n");
+    printf("   KEMTLS Enhanced Broker - Raspberry Pi 5                   \n");
+    printf("║   With Real MQTT Forwarding & Metrics                       \n");
     
     signal(SIGINT, signal_handler);
     signal(SIGTERM, signal_handler);
