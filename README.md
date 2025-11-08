@@ -8,7 +8,7 @@
 
 A lightweight, quantum-resistant communication protocol for Internet of Medical Things (IoMT) combining:
 -  **ML-KEM-512** (NIST-standardized post-quantum cryptography)
--  **KEMTLS-PDK** (signature-free authentication)
+-  **KEMTLS** (signature-free authentication)
 -  **MQTT-over-TLS** (IoT messaging protocol)
 -  **IoMT-optimized** (low latency, energy-efficient)
 
