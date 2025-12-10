@@ -144,23 +144,8 @@ Verifies broker identity before completing handshake, encrypts sensor data, and 
 
 ---
 
-## References
-
-- [NIST Post-Quantum Cryptography](https://csrc.nist.gov/projects/post-quantum-cryptography)
-- [KEMTLS Paper](https://eprint.iacr.org/2020/534)
-- [ML-KEM (Kyber) Specification](https://pq-crystals.org/kyber/)
-- [liboqs Documentation](https://openquantumsafe.org/)
-
----
-
 ## Team
 
 - Moaz Elsayed
 - Rashid Almarri
 - Mohammed Almarri
-
----
-
-## License
-
-MIT License - See [LICENSE](LICENSE)
